@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+$default_font_size: 14px;
+$white: #ffffff;
+$green: #00af29;
+$grey: #cccccc;
+
+body {
+  font-family: sans-serif, Arial;
+  font-size: $default_font_size;
+
+  input {
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    padding: 5px;
+  }
+
+  .btn {
+    padding: 7px 30px;
+    border: 1px solid $grey;
+    cursor: pointer;
+  }
+
+  .btn-pos {
+    border: 1px solid $green !important;
+    background-color: $green;
+    color: $white;
+  }
+}

@@ -1,0 +1,54 @@
+.app-container {
+  margin: auto;
+  width: 90%;
+  overflow: hidden;
+  border: 1px solid #cccccc;
+
+  .list-view {
+    // background-color: #ffffff;
+    float: left;
+    width: 60%;
+  }
+
+  .form-view {
+    // background-color: #83c5ff;
+    float: left;
+    width: 40%;
+
+    .form-control {
+      margin: 10px;
+      padding-left: 10px;
+      padding-bottom: 15px;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #e4e4e4;
+
+      .form-container {
+        overflow: hidden;
+        margin-bottom: 10px;
+
+        .label {
+          float: left;
+          padding-top: 2px;
+          width: 35%;
+        }
+
+        .form {
+          float: left;
+          width: 60%;
+          padding-right: 5px;
+
+          input {
+            width: 100%;
+          }
+        }
+
+        .btn-submit-container {
+          padding: 0 11px;
+          margin-top: 10px;
+          text-align: right;
+        }
+      }
+    }
+  }
+}

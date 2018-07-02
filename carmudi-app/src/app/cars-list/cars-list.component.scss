@@ -1,0 +1,29 @@
+.list {
+  padding: 15px 10px;
+
+  .item {
+    padding: 10px;
+
+    .details {
+      padding-bottom: 8px;
+      border-bottom: 1px dashed #cccccc;
+
+      .information {
+        font-size: 12px;
+        overflow: hidden;
+        margin-bottom: 5px;
+
+        .label {
+          width: 25%;
+          float: left;
+          font-weight: bold
+
+        }
+        .data {
+          width: 75%;
+          float: left;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+<div class="list">
+  <div class="item">
+    <!-- <div class="avatar"><img src="path/to/img.jpeg" alt="Image Goes Here" /></div> -->
+    <!-- loop here -->
+    <div class="details" *ngFor="let obj of carsList">
+      <h4 class="name">{{ obj.name }}</h4>
+      <div class="information">
+        <div class="label">
+          <label>Engine Displacement</label>
+        </div>
+        <div class="data">
+          <span>{{ obj.engineDisp }}</span>
+        </div>
+      </div>
+
+      <div class="information">
+        <div class="label">
+          <label>Engine Power</label>
+        </div>
+        <div class="data">
+          <span>{{ obj.enginePower | number }}</span>
+        </div>
+      </div>
+
+      <div class="information">
+        <div class="label">
+          <label>Price</label>
+        </div>
+        <div class="data">
+          <span>{{ obj.price | currency:'PHP ' }}</span>
+        </div>
+      </div>
+
+      <div class="information">
+        <div class="label">
+          <label>Location</label>
+        </div>
+        <div class="data">
+          <span>{{ obj.location }}</span>
+        </div>
+      </div>
+    </div>
+    <!-- end of loop here -->
+  </div>
+</div>

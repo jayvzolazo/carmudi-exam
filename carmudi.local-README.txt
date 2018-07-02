@@ -1,0 +1,98 @@
+Sytem Requirements:
+Ubuntu 16.04
+PHP7
+MySQLi - installed via cli (see config.php for mysql connection configuration)
+Apache2
+
+======================================================================================
+
+Apache setup:
+
+1. enable mod rewrite
+
+   $ sudo a2enmod rewrite
+
+2. create a file & paste the config below:
+
+   $ sudo vim /etc/apache2/sites-available/carmudi.local.conf
+
+	<VirtualHost *:80>
+	    ServerAdmin carmudiadmin@carmudi.local
+	    ServerName carmudi.local
+	    ServerAlias exam.carmudi.local
+	    DocumentRoot /var/www/carmudi.local/public_html
+	    ErrorLog ${APACHE_LOG_DIR}/carmudi-error.log
+	    CustomLog ${APACHE_LOG_DIR}/carmudi-access.log combined
+	</VirtualHost>
+
+3. Add .php to mime config to /etc/apache2/mods-enabled/mime.conf and paste the config below
+
+   AddType application/x-httpd-php .php
+
+4. Then restart apache
+   
+   $ sudo systemctl restart apache2
+
+======================================================================================
+
+Accessing the REST api:
+
+A. Retrieve Cars List
+
+REQUEST
+
+GET /api/cars HTTP/1.1
+Host: exam.carmudi.local
+
+RESPONSE
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Custom-Header, Content-Type
+Content-Type: application/json
+[
+    {
+    	"id": "1",
+    	"name": "Toyota Vios 2016",
+    	"engineDisp": "500",
+    	"enginePower": "50000",
+    	"price": "800000",
+    	"location": "Laguna",
+    	"dateCreated": "2018-07-01 19:31:24",
+    	"dateUpdated": "2018-07-01 19:31:24"
+    },
+    {
+        "id": "2",
+        "name": "Hyundai Accent 2016",
+        "engineDisp": "400",
+        "enginePower": "45000",
+        "price": "700000",
+        "location": "Manila",
+        "dateCreated": "2018-07-01 20:12:07",
+        "dateUpdated": "2018-07-01 20:12:07"
+    }
+]
+
+-------------------------------------------------------------------
+
+B. Create a Car
+
+REQUEST:
+
+POST /api/cars HTTP/1.1
+Host: exam.carmudi.local
+Content-Type: application/json
+{
+	"name":"Suzuki Raider 150 Fi",
+	"engineDisp": 150,
+	"enginePower": 50000,
+	"price": 120000,
+	"location": "laguna"
+}
+
+
+HTTP/1.1 201 Created
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Headers: X-Custom-Header, Content-Type
+Content-Type: application/json
+

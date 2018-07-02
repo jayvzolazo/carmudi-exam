@@ -35,6 +35,10 @@ Apache setup:
 
 ======================================================================================
 
+Please use mysql script 'carmudi.sql' to create database and table.
+
+======================================================================================
+
 Accessing the REST api:
 
 A. Retrieve Cars List
@@ -96,3 +100,9 @@ Access-Control-Allow-Origin: *
 Access-Control-Allow-Headers: X-Custom-Header, Content-Type
 Content-Type: application/json
 
+
+======================================================================================
+
+Unit Test
+
+$ composer test

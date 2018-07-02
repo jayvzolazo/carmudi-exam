@@ -8,16 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CarsListComponent implements OnInit {
   @Input() carsList: Array<object> = [];
 
-  // objectList: Array<object> = [];
-
   constructor() { }
 
-  // private buildObjects(): void {
-  //   let objectList = this.carsList;
-  // }
-
-  ngOnInit() {
-    // this.buildObjects();
-  }
+  ngOnInit() { }
 
 }
